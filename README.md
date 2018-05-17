@@ -2,5 +2,5 @@
 
 To run this project, execute the following commands in the console inside the project folder:
 
-npm install
-npm start
+- npm install
+- npm start
