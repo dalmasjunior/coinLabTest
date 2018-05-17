@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{metaData.title}}</h5>
+    <p><b>Symbol:</b> <span>{{metaData.symbol}}</span></p>
+    <p><b>Last Refreshed:</b> <span>{{metaData.last}}</span></p>
+    <p><b>Output Size:</b> <span>{{metaData.size}}</span></p>
+    <p><b>Time Zone:</b> <span>{{metaData.timeZone}}</span></p>
+  </div>
+</div>
+
+<table class="table table-striped table-condensed table-hover">
+  <thead>
+    <tr>
+      <th class="date">Date&nbsp;</th>
+      <th class="open">Open&nbsp;</th>
+      <th class="high">High&nbsp;</th>
+      <th class="low">Low&nbsp;</th>
+      <th class="">Close&nbsp;</th>
+      <th class="adjusted-close">Adjusted Close&nbsp;</th>
+      <th class="volume">Volume&nbsp;</th>
+      <th class="dividend-amount">Dividend Amount&nbsp;</th>
+      <th class="split-coefficient">Split Coefficient&nbsp;</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <td colspan="6">
+      <div class="pagination pull-right">
+        <button type="button" class="btn btn-light" (click)="prev()">&laquo; Prev</button>
+        {{page + 1}}  of {{total}}
+        <button type="button" class="btn btn-light" (click)="next()">Next &raquo;</button>
+      </div>
+    </td>
+  </tfoot>
+  <tbody>
+    <tr *ngFor="let item of paged">
+      <td>{{item.date}}</td>
+      <td>{{item.open}}</td>
+      <td>{{item.high}}</td>
+      <td>{{item.low}}</td>
+      <td>{{item.close}}</td>
+      <td>{{item.adjustedClose}}</td>
+      <td>{{item.volume}}</td>
+      <td>{{item.dividendAmount}}</td>
+      <td>{{item.splitCoefficient}}</td>
+    </tr>
+  </tbody>
+</table>
